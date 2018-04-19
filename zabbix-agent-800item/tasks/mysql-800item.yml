@@ -1,0 +1,16 @@
+---
+# task file for mysql
+# Create useranme and password for using Macro 
+- name: ------ install zabbix-agent -----
+  yum:
+    name: MySQL-python
+    state: present 
+
+- name: "MySQL | Create database user"
+  mysql_user: "name={{ zabbix_config.dbuser_macro_800item }}
+              password={{ zabbix_config.dbpassword_macro_800item }}
+              priv=*.*:ALL
+              state=present
+              login_user=root
+              login_password={{ mysql_config.mysql_root_password }}"
+  

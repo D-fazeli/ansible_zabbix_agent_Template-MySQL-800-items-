@@ -1,0 +1,18 @@
+---
+
+- name: ------ install zabbix-agent -----
+  yum:
+    name: zabbix-agent
+    state: present 
+
+- name: --------Replace-config------
+  template: src=agent-confg.j2  dest=/etc/zabbix/zabbix_agentd.conf   
+
+- name: ------install zabbix-sender-----
+  yum: 
+    name: zabbix-sender
+    state: present
+  
+- include_tasks: 800item.yml
+- include_tasks: mysql-800item.yml
+  

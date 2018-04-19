@@ -1,0 +1,13 @@
+---
+# defaults file for ansible-mariadb-galera
+
+zabbix_config:
+  host_name: node3
+  zabbix_server_ip: 192.168.231.95
+
+  dbuser_macro_800item: user_macro_800item
+  dbpassword_macro_800item: password_macro_800item 
+
+mysql_config: 
+  user: root
+  mysql_root_password: 1

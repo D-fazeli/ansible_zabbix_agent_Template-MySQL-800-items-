@@ -1,0 +1,6 @@
+---
+- hosts: 
+   - zabbix_nodes
+  roles:
+    - zabbix-agent-800item
+
